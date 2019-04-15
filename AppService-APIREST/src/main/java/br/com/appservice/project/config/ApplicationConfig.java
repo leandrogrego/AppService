@@ -15,26 +15,20 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class ApplicationConfig {
 
-    @Bean
-    public Docket api() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(getApiInfo())
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("br.com.appservice.project"))
-                .paths(PathSelectors.any())
-                .build();
-    }
+	@Bean
+	public Docket api() {
+		return new Docket(DocumentationType.SWAGGER_2).apiInfo(getApiInfo()).select()
+				.apis(RequestHandlerSelectors.basePackage("br.com.appservice.project")).paths(PathSelectors.any())
+				.build();
+	}
 
-    private ApiInfo getApiInfo() {
-        Contact contact = new Contact("Matheus Pinheiro Pereira","https://github.com/MatheusZakkwylde","matheuszakkwylde@gmail.com");
-       
-        return new ApiInfoBuilder()
-                .title("API REST APPSERVICE")
-                .description("APP SERVICE é uma aplicação de gerencia de prestadores de serviço onde você pode escolher quem e quando realizar seu serviço de qualquer lugar")
-                .version("1.0")
-                .license("Apache 2.0")
-                .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0")
-                .contact(contact)
-                .build();
-    }
+	private ApiInfo getApiInfo() {
+		Contact contact = new Contact("Matheus Pinheiro Pereira", "https://github.com/MatheusZakkwylde",
+				"matheuszakkwylde@gmail.com");
+
+		return new ApiInfoBuilder().title("API REST APPSERVICE").description(
+				"APP SERVICE é uma aplicação de gerencia de prestadores de serviço onde você pode escolher quem e quando realizar seu serviço de qualquer lugar")
+				.version("1.0").license("Apache 2.0").licenseUrl("http://www.apache.org/licenses/LICENSE-2.0")
+				.contact(contact).build();
+	}
 }
