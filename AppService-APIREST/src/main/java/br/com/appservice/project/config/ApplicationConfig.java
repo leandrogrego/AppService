@@ -30,7 +30,7 @@ public class ApplicationConfig {
        
         return new ApiInfoBuilder()
                 .title("API REST APPSERVICE")
-                .description("APP SERVICE é uma aplicação de gerencia de prestadores de serviço")
+                .description("APP SERVICE é uma aplicação de gerencia de prestadores de serviço onde você pode escolher quem e quando realizar seu serviço de qualquer lugar")
                 .version("1.0")
                 .license("Apache 2.0")
                 .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0")
