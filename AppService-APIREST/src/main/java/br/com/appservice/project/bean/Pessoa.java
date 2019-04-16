@@ -4,6 +4,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Lob;
@@ -39,13 +40,13 @@ public class Pessoa extends AbstractEntity {
 	/**
 	 * Uma pessoa para muitos telefones
 	 */
-	@OneToMany
+	@OneToMany(cascade=CascadeType.ALL)
 	@ApiModelProperty(notes = "Lista de telefones do Usúario", required = true)
 	private List<Telefone> telefones;
 	/**
 	 * Muitas pessoas para um endereço
 	 */
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	@ApiModelProperty(notes = "Endereço Recidencial", required = true)
 	private Endereco endereco;
 
